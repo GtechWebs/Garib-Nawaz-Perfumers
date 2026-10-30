@@ -357,6 +357,11 @@ nav a:hover {
   gap: 14px;
 }
 
+.about-owner .owner-profile {
+  min-width: 0;
+  text-align: center;
+}
+
 .about-owner .owner-photo {
   height: auto;
   aspect-ratio: 4 / 5;
@@ -376,8 +381,14 @@ nav a:hover {
   transform-origin: center 15%;
 }
 
-.about-owner .owner-photo:last-child img {
+.about-owner .owner-profile:last-child .owner-photo img {
   object-position: center 15%;
+}
+
+.about-owner .owner-name {
+  margin: 10px 0 0;
+  color: #4a1528;
+  font-weight: 600;
 }
 
 .about-instagram {
