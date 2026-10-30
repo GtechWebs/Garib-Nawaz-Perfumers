@@ -338,9 +338,9 @@ nav a:hover {
 
 .about-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(250px, 350px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
   align-items: center;
-  gap: 36px;
+  gap: 30px;
   margin-top: 24px;
 }
 
@@ -351,18 +351,32 @@ nav a:hover {
 
 .about-owner {
   width: 100%;
-  max-width: 350px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .about-owner .owner-photo {
   height: auto;
-  aspect-ratio: 350 / 427;
-  margin-bottom: 18px;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 0;
+  overflow: hidden;
   border: 1px solid #eee8df;
 }
 
 .about-owner .owner-photo img {
+  display: block;
+  transform: scale(1.14);
+  object-position: center;
+}
+
+.about-owner .owner-photo:first-child img {
+  transform: scale(1.7);
+  transform-origin: center 15%;
+}
+
+.about-owner .owner-photo:last-child img {
   object-position: center 15%;
 }
 
@@ -509,6 +523,41 @@ footer a {
   object-fit: cover;
 }
 
+.product-card-featured {
+  position: relative;
+  border: 2px solid #c5a46d;
+  box-shadow: 0 8px 24px rgba(53, 18, 31, 0.16);
+}
+
+.product-featured-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background-color: #315a3b;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.product-featured-badge i {
+  margin-right: 5px;
+  color: #e2c995;
+}
+
+.product-card-featured .product-info {
+  border-bottom-color: #315a3b;
+}
+
+.product-card-featured h3,
+.product-card-featured .product-price {
+  color: #315a3b;
+}
+
 .product-image-placeholder {
   padding: 32px;
   object-fit: contain;
@@ -560,6 +609,14 @@ footer a {
   color: #4a1528;
   font-size: 17px;
   font-weight: 700;
+  text-align: center;
+}
+
+.product-price-note {
+  margin-top: -10px;
+  color: #726967;
+  font-size: 11px;
+  line-height: 1.4;
   text-align: center;
 }
 
@@ -1266,6 +1323,108 @@ footer p {
   background-color: #ffffff;
 }
 
+.green-ajmer-feature {
+  padding: 56px 25px;
+  background-color: #f3eee7;
+}
+
+.green-ajmer-feature-card {
+  max-width: 1050px;
+  min-height: 340px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  overflow: hidden;
+  border: 1px solid #c5a46d;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #203e2a, #315a3b);
+  box-shadow: 0 16px 40px rgba(32, 62, 42, 0.18);
+}
+
+.green-ajmer-feature-image {
+  min-height: 340px;
+  overflow: hidden;
+  background-color: #203e2a;
+}
+
+.green-ajmer-feature-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.green-ajmer-feature-card:hover .green-ajmer-feature-image img {
+  transform: scale(1.04);
+}
+
+.green-ajmer-feature-copy {
+  padding: clamp(30px, 5vw, 58px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.green-ajmer-feature-copy .section-eyebrow {
+  margin-bottom: 12px;
+  color: #e2c995;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.green-ajmer-feature-copy h2 {
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 400;
+}
+
+.green-ajmer-feature-copy > p:not(.section-eyebrow):not(.green-ajmer-feature-price) {
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.green-ajmer-feature-price {
+  margin-bottom: 20px;
+  color: #e2c995;
+  font-size: 13px;
+}
+
+.green-ajmer-feature-price strong {
+  margin-left: 8px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.green-ajmer-feature-button {
+  padding: 13px 18px;
+  border-radius: 3px;
+  background-color: #e2c995;
+  color: #203e2a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.green-ajmer-feature-button:hover {
+  transform: translateY(-2px);
+  background-color: #ffffff;
+}
+
+.green-ajmer-feature-button i {
+  margin-left: 6px;
+}
+
 .home-visit-card {
   max-width: 1050px;
   min-height: 360px;
@@ -1393,6 +1552,23 @@ footer p {
 
   .home-visit-card {
     grid-template-columns: 1fr;
+  }
+
+  .green-ajmer-feature {
+    padding: 48px 18px;
+  }
+
+  .green-ajmer-feature-card {
+    grid-template-columns: 1fr;
+  }
+
+  .green-ajmer-feature-image {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .green-ajmer-feature-copy {
+    padding: 30px 24px;
   }
 
   .home-visit-image {
@@ -1589,7 +1765,7 @@ nav a {
   }
 
   .about-owner {
-    width: min(350px, 100%);
+    width: min(430px, 100%);
   }
 }
 
