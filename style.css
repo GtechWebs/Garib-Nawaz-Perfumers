@@ -1555,20 +1555,42 @@ footer p {
   }
 
   .green-ajmer-feature {
-    padding: 48px 18px;
+    padding: 32px 16px;
   }
 
   .green-ajmer-feature-card {
-    grid-template-columns: 1fr;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .green-ajmer-feature-image {
+    height: clamp(210px, 72vw, 320px);
     min-height: 0;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
   }
 
   .green-ajmer-feature-copy {
-    padding: 30px 24px;
+    min-width: 0;
+    padding: 26px 22px;
+  }
+
+  .green-ajmer-feature-copy .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  .green-ajmer-feature-copy h2 {
+    font-size: clamp(32px, 9vw, 40px);
+  }
+
+  .green-ajmer-feature-copy > p:not(.section-eyebrow):not(.green-ajmer-feature-price) {
+    font-size: 14px;
+  }
+
+  .green-ajmer-feature-button {
+    max-width: 100%;
+    padding: 12px 14px;
+    font-size: 12px;
   }
 
   .home-visit-image {
